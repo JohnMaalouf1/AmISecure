@@ -3,13 +3,21 @@ from time import time
 from itertools import count, product
 from string import printable
 
+counter = 0
 
 def passwords(encodeType):
-    possibleChars = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+    global counter
     chars = [i.encode(encodeType) for i in printable]
     for length in count(start=1):
         for pwd in product(chars, repeat=length):
+<<<<<<< HEAD
             print(pwd)
+=======
+            counter = counter + 1
+            if counter % 100 ==0:
+               print(counter)
+            #print(pwd)
+>>>>>>> fee458a3c1e500e30e3a44dcfd12259f2ea4a057
             yield b''.join(pwd)
 
 
@@ -43,6 +51,7 @@ def main():
             hashedPassword = str(input("Please enter your password: "))
             break
 
+    
     start = time()
     cracked = crack(hashedPassword, encodeType)
     end = time()
