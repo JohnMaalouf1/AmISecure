@@ -9,7 +9,7 @@ def passwords(encodeType):
     chars = [i.encode(encodeType) for i in printable]
     for length in count(start=1):
         for pwd in product(chars, repeat=length):
-            #print(pwd)
+            print(pwd)
             yield b''.join(pwd)
 
 
