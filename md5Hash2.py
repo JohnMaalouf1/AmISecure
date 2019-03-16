@@ -30,7 +30,7 @@ def crack(search_hash, encodeType):
 def main():
     encodeType = 'ascii'
 
-    userPassword = "a"
+    userPassword = "aa"
     hashedPassword = md5(userPassword.encode(encodeType)).hexdigest()
 
     
