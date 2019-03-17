@@ -2,7 +2,9 @@ from hashlib import md5
 from time import time
 from itertools import count, product
 from string import printable
+import sys
 
+userPassword = sys.argv[1]
 counter = 0
 
 def passwords():
@@ -34,4 +36,4 @@ def main(password):
         return("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
 
 
-main(password)
+main(userPassword)

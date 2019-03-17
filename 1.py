@@ -2,7 +2,9 @@ from hashlib import md5
 from time import time
 from itertools import count, product
 from string import printable
+import sys
 
+userPassword = sys.argv[1]
 counter = 0
 
 def passwords():
@@ -10,7 +12,6 @@ def passwords():
     for length in count(start=0):
         for pwd in product(chars, repeat=length):
             yield b''.join(pwd)
-
 
 def crack(search_hash):
     global counter
@@ -22,7 +23,6 @@ def crack(search_hash):
             return ("The password is: "+ pwd.decode("ascii") + " and the hash is: " + md5(pwd).hexdigest())
 
 def main(password):
-    
     hashedPassword = md5(password.encode('ascii')).hexdigest()
     start = time()
     hashPassword = md5(hashedPassword.encode("ascii")).hexdigest()
@@ -30,8 +30,8 @@ def main(password):
     end = time()
     if cracked == 0:
         return 0
-    else:  
+    else:
+        print("ye")
         return("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
 
-
-main(password)
+main(userPassword)
