@@ -1,81 +1,34 @@
-pass="aa"
-trap "exit 1" TERM
-export TOP_PID=$$
-export last=$!
-exitcode=1
+pass="a"
 
-abort(){
-exit
-}
 crack1(){
-cracked1=$(sudo python3 "/home/michael/SecurityVisualized/1.py" $pass 2>&1)
-if [$cracked1 -ne $exitcode]; then
-       echo cracked1
-       abort
-fi       
+sudo python3 /home/michael/SecurityVisualized/1.py $pass
 }
 crack2(){
-cracked2=$(sudo python3 /home/michael/SecurityVisualized/2.py $pass 2>&1)
-if [$cracked2 -ne $exitcode]; then
-       echo cracked2
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/2.py $pass
 }
 crack3(){
-cracked3=$(sudo python3 /home/michael/SecurityVisualized/3.py $pass 2>&1)
-if [$cracked3 -ne $exitcode]; then
-       echo cracked3
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/3.py $pass
 }
 crack4(){
-cracked4=$(sudo python3 /home/michael/SecurityVisualized/4.py $pass 2>&1)
-if [$cracked4 -ne $exitcode]; then
-       echo cracked4
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/4.py $pass
 }
 crack5(){
-cracked5=$(sudo python3 /home/michael/SecurityVisualized/5.py $pass 2>&1)
-if [$cracked5 -ne $exitcode]; then
-       echo cracked5
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/5.py $pass
 }
 crack6(){
-cracked6=$(sudo python3 /home/michael/SecurityVisualized/6.py $pass 2>&1)
-if [$cracked6 -ne $exitcode]; then
-       echo cracked6
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/6.py $pass
 }
 crack7(){
-cracked7=$(sudo python3 /home/michael/SecurityVisualized/7.py $pass 2>&1)
-if [$cracked7 -ne $exitcode]; then
-       echo cracked7
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/7.py $pass
 }
 crack8(){
-cracked8=$(sudo python3 /home/michael/SecurityVisualized/8.py $pass 2>&1)
-if [$cracked8 -ne $exitcode]; then
-       echo cracked8
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/8.py $pass
 }
 crack9(){
-cracked9=$(sudo python3 /home/michael/SecurityVisualized/9.py $pass 2>&1)
-if [$cracked9 -ne $exitcode]; then
-       echo cracked9
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/9.py $pass
 }
 crack10(){
-cracked10=$(sudo python3 /home/michael/SecurityVisualized/10.py $pass 2>&1)
-if [$cracked10 -ne $exitcode]; then
-       echo cracked10
-       abort
-fi
+sudo python3 /home/michael/SecurityVisualized/10.py $pass
 }
 num="$10"
 crack1 $1 &
