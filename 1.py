@@ -31,7 +31,6 @@ def main(password):
     if cracked == 0:
         return 0
     else:
-        print("ye")
-        return("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
+        sys.exit("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
 
 main(userPassword)
