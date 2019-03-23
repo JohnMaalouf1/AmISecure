@@ -30,7 +30,7 @@ def crack(search_hash, encodeType):
 def main():
     encodeType = 'ascii'
 
-    userPassword = "a"
+    userPassword = "aaaaa"
     hashedPassword = md5(userPassword.encode(encodeType)).hexdigest()
 
     
@@ -38,6 +38,6 @@ def main():
     cracked = crack(hashedPassword, encodeType)
     end = time()
     print("The Password is " + str(cracked))
-    print("Time: {end - start} seconds.")
+    print("Time: " + str(end - start) +" seconds.")
 
 main()

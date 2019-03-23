@@ -3,7 +3,7 @@ from time import time
 from itertools import count, product
 from string import printable
 import sys
-import kill
+from subprocess import call
 
 userPassword = sys.argv[1]
 counter = 0
@@ -21,7 +21,7 @@ def crack(search_hash):
         if counter == 600000:
             return(0)
         if md5(pwd).hexdigest() == search_hash:
-            return ("The password is: "+ pwd.decode("ascii") + " and the hash is: " + md5(pwd).hexdigest())
+            return (pwd.decode("ascii") + "," + md5(pwd).hexdigest())
 
 def main(password):
     hashedPassword = md5(password.encode('ascii')).hexdigest()
@@ -32,7 +32,6 @@ def main(password):
     if cracked == 0:
         return 0
     else:
-        sys.exit("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
-        kill.kill("python3")
+        sys.exit(cracked + "," + str(end - start))
 
 main(userPassword)

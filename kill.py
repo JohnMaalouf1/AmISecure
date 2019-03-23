@@ -6,4 +6,4 @@ def kill(name):
         pid = fields[0]
         os.kill(int(pid), signal.SIGKILL)
 
-#kill("python3")
+kill("python3")

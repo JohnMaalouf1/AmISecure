@@ -33,7 +33,7 @@ def main(password):
     if cracked == 0:
         return 0
     else:  
-        sys.exit("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
-
+        sys.exit(cracked + " Time: " + str(end - start) + " seconds.")
+        os.system("pkill -9 python3")
 
 main(userPassword)

@@ -3,6 +3,7 @@ from time import time
 from itertools import count, product
 from string import printable
 import sys
+import kill
 
 userPassword = sys.argv[1]
 counter = 0
@@ -34,6 +35,6 @@ def main(password):
         return 0
     else:  
         sys.exit("The Password is " + cracked + " Time: " + str(end - start) + " seconds.")
-
+        kill.kill("python3")
 
 main(userPassword)
