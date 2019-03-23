@@ -3,7 +3,6 @@ from time import time
 from itertools import count, product
 from string import printable
 import sys
-from subprocess import call
 
 userPassword = sys.argv[1]
 counter = 0
