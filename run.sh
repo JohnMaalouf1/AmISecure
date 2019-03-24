@@ -18,5 +18,10 @@ start python3 8.py "$pass"
 start python3 9.py "$pass"
 start python3 10.py "$pass"  
 
-wait -n "${pids[@]}"           # wait for first finished process
-kill "${pids[@]}" 2>/dev/null  # kill all/other process
+for process in ${pids[@]}; do
+	wait -n "${pids[@]}"           # wait for first finished process
+	ret=$?
+	if [ $ret -ne 0 ]; then
+		kill "${pids[@]}" 2>/dev/null  # kill all/other process
+	fi
+done
